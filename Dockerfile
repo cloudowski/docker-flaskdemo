@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3-alpine
 
 MAINTAINER Tomasz Cholewa <tomasz@cloudowski.com>
 
