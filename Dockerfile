@@ -1,11 +1,14 @@
-FROM python:3-alpine
-
+FROM python:3.6-alpine
 MAINTAINER Tomasz Cholewa <tomasz@cloudowski.com>
 
-RUN pip install flask
+COPY ./requirements.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
 
-COPY src /src/
+ARG SRC=src
+
+COPY ${SRC} /app/src/
+WORKDIR /app/src/
 
 EXPOSE 8080
 
-ENTRYPOINT ["python", "/src/app.py"]
+CMD ["python", "app.py"]
