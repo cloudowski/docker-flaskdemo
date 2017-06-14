@@ -53,7 +53,7 @@ def send_json() :
 def healthz():
     delta = datetime.datetime.now()-startDT
     if delta.seconds > 300:
-        abort(503)
+        abort(451)
     return 'OK'
 
 if __name__ == "__main__":
